@@ -1,0 +1,9 @@
+# Gather EC2 facts from remote instance
+---
+-   hosts: local
+    connection: local
+    gather_facts: False
+    collections:
+        - azure.azcollection
+    roles:
+        - terminate_instances
