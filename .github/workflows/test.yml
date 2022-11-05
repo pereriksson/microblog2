@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.8"]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
@@ -22,4 +22,5 @@ jobs:
         run: |
           make test
   deploy:
+    needs: test
     uses: ./.github/workflows/build_and_push_to_docker.yml
