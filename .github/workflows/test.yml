@@ -24,3 +24,4 @@ jobs:
   deploy:
     needs: test
     uses: ./.github/workflows/build_and_push_to_docker.yml
+    secrets: inherit
